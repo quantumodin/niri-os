@@ -37,7 +37,7 @@ modules:
         - wdisplays
         - brightnessctl
         - wlsunset
-        - xwayland
+        - xwayland-satellite
         - matugen
         - dsearch
         - thunar
@@ -51,11 +51,10 @@ modules:
         # daemons, polkits, etc.
         - power-profiles-daemon
         - xdg-desktop-portal-gtk
-        - polkit-gnome
+        - xdg-desktop-portal-gnome
         - NetworkManager
         - network-manager-applet
         - bluez
-        - bluez-utils
 
         # fonts
         - google-noto-fonts-all
