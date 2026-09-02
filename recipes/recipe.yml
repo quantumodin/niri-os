@@ -43,7 +43,6 @@ modules:
         - dsearch
         - nemo
         - khal
-        - dankcalendar-git
 
         # audio stack
         - pipewire
@@ -114,5 +113,8 @@ modules:
         - sddm.service
         - waydroid-container
         - power-profiles-daemon
+    user:
+      enabled:
+        - dms.service
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
