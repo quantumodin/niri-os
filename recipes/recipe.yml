@@ -3,11 +3,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: niri-os
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: niri atomic fedora image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: latest # You can pin to a specific version of Fedora as well
+base-image: ghcr.io/ublue-os/base-nvidia
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -19,18 +19,65 @@ modules:
 
   - type: dnf
     repos:
+      files:
+        - https://packages.microsoft.com/yumrepos/vscode/config.repo
       copr:
         - atim/starship
+        - avengemedia/dms
+    group-install:
+      with-optional: true
+      packages:
+        - printing
     install:
       packages:
-        - micro
+        # desktop stack
+        - niri
+        - dms
+        - sddm
+        - wdisplays
+        - brightnessctl
+        - wlsunset
+        - xwayland
+        - matugen
+        - dsearch
+        - thunar
+
+        # audio stack
+        - pipewire
+        - wireplumber
+        - pipewire-pulseaudio
+        - cava
+
+        # daemons, polkits, etc.
+        - power-profiles-daemon
+        - xdg-desktop-portal-gtk
+        - polkit-gnome
+        - NetworkManager
+        - network-manager-applet
+        - bluez
+        - bluez-utils
+
+        # fonts
+        - google-noto-fonts-all
+        - google-noto-fonts-all-vf
+
+        # shell/terminal
+        - alacritty
+        - fish
         - starship
+        - fastfetch
+        - git
+
+        # misc
+        - code
+        - distrobox
+        - waydroid
+        - steam-devices
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - firefox-langpacks
+        - toolbox
 
   - type: default-flatpaks
     configurations:
@@ -38,8 +85,31 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
+          - com.brave.Browser
+          - com.github.ryonakano.pinit
+          - org.gnome.Lollypop
+          - org.nomacs.ImageLounge
+          - io.github.celluloid_player.Celluloid
+          - io.github.DenysMb.Kontainer
+          - com.valvesoftware.Steam
+          - io.github.kolunmi.Bazaar
+          - org.kde.ark
+          
       - scope: user # Also add Flathub user repo, but no user packages
+
+  # Brew
+  - type: brew
+    nofile-limits: true
+    brew-analytics: false
+    auto-update: true
+    auto-upgrade: true
+
+  # Enable/disable system services expected for this image.
+  - type: systemd
+    system:
+      enabled:
+        - sddm.service
+        - waydroid-container
+        - power-profiles-daemon
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
