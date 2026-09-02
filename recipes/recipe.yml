@@ -51,7 +51,6 @@ modules:
         # daemons, polkits, etc.
         - power-profiles-daemon
         - xdg-desktop-portal-gtk
-        - xdg-desktop-portal-gnome
         - NetworkManager
         - network-manager-applet
         - bluez
