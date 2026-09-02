@@ -54,7 +54,6 @@ modules:
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-kde
         - NetworkManager
-        - network-manager-applet
         - bluez
 
         # fonts
