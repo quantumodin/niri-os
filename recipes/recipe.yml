@@ -23,7 +23,6 @@ modules:
         - https://packages.microsoft.com/yumrepos/vscode/config.repo
       copr:
         - atim/starship
-        - avengemedia/dms
     group-install:
       with-optional: true
       packages:
@@ -32,14 +31,14 @@ modules:
       packages:
         # desktop stack
         - niri
-        - dms
+        - DankMaterialShell
+        - quickshell
         - sddm
         - wdisplays
         - brightnessctl
         - wlsunset
         - xwayland-satellite
         - matugen
-        - dsearch
         - nemo
         - khal
 
@@ -111,8 +110,8 @@ modules:
         - sddm.service
         - waydroid-container
         - power-profiles-daemon
-    user:
-      enabled:
-        - dms.service
+    # user:
+    #   enabled:
+    #     - dms.service
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
