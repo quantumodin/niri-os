@@ -24,7 +24,6 @@ modules:
       copr:
         - atim/starship
         - avengemedia/dms
-        - avengemedia/danklinux
     group-install:
       with-optional: true
       packages:
@@ -79,7 +78,6 @@ modules:
         - firefox
         - firefox-langpacks
         - toolbox
-        - fuzzel
 
   - type: default-flatpaks
     configurations:
