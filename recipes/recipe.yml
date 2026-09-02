@@ -41,6 +41,7 @@ modules:
         - matugen
         - dolphin
         - khal
+        - wl-mirror
 
         # audio stack
         - pipewire
