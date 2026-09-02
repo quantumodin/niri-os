@@ -41,6 +41,8 @@ modules:
         - matugen
         - dsearch
         - thunar
+        - khal
+        - dankcalendar
 
         # audio stack
         - pipewire
