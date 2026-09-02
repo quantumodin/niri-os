@@ -39,7 +39,7 @@ modules:
         - wlsunset
         - xwayland-satellite
         - matugen
-        - nemo
+        - dolphin
         - khal
 
         # audio stack
@@ -51,6 +51,7 @@ modules:
         # daemons, polkits, etc.
         - power-profiles-daemon
         - xdg-desktop-portal-gtk
+        - xdg-desktop-portal-kde
         - NetworkManager
         - network-manager-applet
         - bluez
