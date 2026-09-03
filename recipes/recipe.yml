@@ -39,7 +39,6 @@ modules:
         - wlsunset
         - xwayland-satellite
         - matugen
-        - dolphin
         - pcmanfm-qt
         - khal
         - qt6ct
