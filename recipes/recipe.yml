@@ -40,8 +40,9 @@ modules:
         - xwayland-satellite
         - matugen
         - dolphin
+        - pcmanfm-qt
         - khal
-        - wl-mirror
+        - wl-mirrorp
 
         # audio stack
         - pipewire
@@ -53,6 +54,7 @@ modules:
         - power-profiles-daemon
         - xdg-desktop-portal-gtk
         - xdg-desktop-portal-kde
+        - xdg-desktop-portal-gnome
         - NetworkManager
         - bluez
 
