@@ -39,7 +39,7 @@ modules:
         - wlsunset
         - xwayland-satellite
         - matugen
-        - pcmanfm-qt
+        - dolphin
         - khal
         - qt6ct
 
@@ -64,6 +64,7 @@ modules:
 
         # shell/terminal
         - alacritty
+        - kitty
         - fish
         - starship
         - fastfetch
