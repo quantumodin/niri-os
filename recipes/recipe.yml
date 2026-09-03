@@ -42,7 +42,6 @@ modules:
         - dolphin
         - pcmanfm-qt
         - khal
-        - wl-mirrorp
 
         # audio stack
         - pipewire
