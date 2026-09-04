@@ -44,6 +44,7 @@ modules:
         - qt6ct
         - kanshi
         - oxygen-icon-theme
+        - https://github.com/LizardByte/Sunshine/releases/download/v2026.516.143833/Sunshine-2026.516.143833-1.fc45.x86_64.rpm
 
         # audio stack
         - pipewire
