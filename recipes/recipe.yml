@@ -42,6 +42,8 @@ modules:
         - dolphin
         - khal
         - qt6ct
+        - kanshi
+        - oxygen-icon-theme
 
         # audio stack
         - pipewire
@@ -75,7 +77,6 @@ modules:
         - distrobox
         - waydroid
         - steam-devices
-        - oxygen-icon-theme
     remove:
       packages:
         - firefox
@@ -115,5 +116,8 @@ modules:
         - sddm.service
         - waydroid-container
         - power-profiles-daemon
+    user:
+      enabled:
+        - dms.service
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
